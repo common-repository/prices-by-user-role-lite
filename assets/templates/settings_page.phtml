@@ -1,0 +1,113 @@
+<h2 class="festi-setting-page-title"><?php esc_html_e("Prices by User Role Lite", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></h2>
+
+<div class="tab-content">
+    <div id="tab_general" class="tab active">
+        <div class="update-nag notice upgrade-message">
+            <p><?php esc_html_e("Looking for more features? Go Premium! Learn about", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?>
+                <a><?php esc_html_e("Prices by User Role Pro benefits", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></a>.
+            </p>
+        </div>
+        <div class="festi-user-role-prices festi-content">
+            <form method="post" class="festi-user-role-prices-form">
+                <input type="hidden" name="__action" value="save"/>
+                <?php wp_create_nonce(PRICE_BY_ROLE_LITE_NONCE_NAME);
+                      wp_nonce_field(PRICE_BY_ROLE_LITE_NONCE_NAME);
+                ?>
+                <fieldset class="festi-user-role-prices-options">
+                    <?php
+                    foreach ($settings_filds as $field_name => $values) { ?>
+                        <table cellpadding="0" cellspacing="0" class="festi-user-role-prices-form-table">
+                            <tbody>
+                            <tr class="<?php if (array_key_exists('classes', $values)) echo $values['classes']; ?>">
+                                <th>
+                                    <?php if (array_key_exists('caption', $values)) echo $values['caption']; ?>
+                                </th>
+                                <td valign="middle">
+                                    <?php
+                                    foreach ($all_user_roles as $role => $roles_value) { ?>
+                                    <fieldset>
+                                        <label>
+                                            <?php
+                                            $name = $field_name.'['.$role.']';
+
+                                            $settings = !empty($current_setting[$field_name]) ? $current_setting[$field_name] : array();
+
+                                            $checked = array_key_exists($role, $settings) ? ' checked="checked"' : '';
+
+                                            ?>
+
+                                            <input name="<?php echo esc_attr($name) ?>" <?php echo $checked; ?> type="checkbox" value="1">
+                                                <span class="festi-user-role-prices-lable">
+                                                    <?php
+                                                    if (array_key_exists('name', $roles_value)) {
+                                                        echo $roles_value['name'];
+                                                    } ?>
+                                                </span>
+                                        </label>
+                                        </fieldset>                                        
+                                        <?php
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <?php
+                    }
+                    ?>
+                </fieldset>
+
+                <div class="festi-user-role-prices-save-button-block">
+                    <input type="submit" value="<?php esc_attr_e('Save Changes', PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?>"
+                           class="festi-user-role-prices-save-button button-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tab_upgrade" class="tab">
+        <?php echo pbr_fetch('upgrade_premium.phtml'); ?>
+        <div class="block-compare-free-and-premium-version">
+            <div class="block-free-version-features">
+                <h3><?php esc_html_e("FREE VERSION FEATURES", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></h3>
+
+                <ul class="features-list">
+                    <li><?php esc_html_e("Hide Add to Cart Button for User Roles", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide Prices for User Roles", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                </ul>
+            </div>
+
+            <div class="block-premium-version-features">
+                <h3><?php esc_html_e("PREMIUM VERSION FEATURES", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></h3>
+
+                <ul class="features-list">
+                    <li><?php esc_html_e("Prices by User Role for Simple Products", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Prices by User Role for Variable Products", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide Add to Cart Button for User Roles", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide Prices for User Roles", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Text for Registered Users with Hidden Price", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Pricing Roles", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Discount for the user role group", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Disable discount per product", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Markup for user role group", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the “Add to Cart” button from non registered users", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the prices from non registered users", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Text instead of the price for the non registered user", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the “Add to Cart” button from the specific user role group", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the prices from the specific user role group", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Text instead of the price for the specific user role group", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Display the savings percentage", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Custom user groups", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("WooCommerce CSV import for product list (NEW: import variable products is available!)", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Set different prices for differen roles for individual products", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Charge different prices for each variation in a variable products", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the price for non registered users for individual product", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Hide the price and the “Add to Cart” button from user groups for individual products", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("Support WooCommerce REST API", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                    <li><?php esc_html_e("WPML translation ready", PRICE_BY_ROLE_LITE_LANGUAGE_DOMAIN); ?></li>
+                </ul>
+            </div>
+        </div>
+        <?php echo pbr_fetch('upgrade_premium.phtml'); ?>
+    </div>
+</div>

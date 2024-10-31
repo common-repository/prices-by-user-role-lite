@@ -1,0 +1,101 @@
+.festi-setting-page-title
+{
+    margin: 15px 0 0 0;
+}
+
+.upgrade-message
+{
+    margin: 0;
+}
+
+.upgrade-message a
+{
+   cursor: pointer;
+}
+
+body table.wp-list-table .tags
+{
+    table-layout: auto;
+}
+
+.festi-user-role-prices  .festi-user-role-prices-form-table  td,
+.festi-user-role-prices  .festi-user-role-prices-form-table  th
+{
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    line-height: 1.4;
+    vertical-align: top;
+    text-align: left;
+    font-size: 14px;
+}
+
+.festi-user-role-prices  .festi-user-role-prices-form-table  th
+{
+    width: 300px;
+}
+
+.festi-user-role-prices input[type="text"],
+.festi-user-role-prices input[type="number"],
+.festi-user-role-prices input[type="checkbox"],
+.festi-user-role-prices select
+{
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.block-compare-free-and-premium-version
+{
+    margin: 15px 0 0 0;
+    font-size: 0px;
+    background-color: #ffffff;
+    width: 95%;
+    padding: 30px;
+}
+
+.block-compare-free-and-premium-version h3
+{
+    color: #7F8A97;
+    margin: 0 0 35px 0;
+}
+
+.block-compare-free-and-premium-version li
+{
+    color: #6D6D6D;
+}
+
+.block-compare-free-and-premium-version ul li:before
+{
+    font-size: 12px;
+    content: url('../images/list-style-image.png');
+    padding: 0 15px 15px 0;
+    display: inline-block;
+}
+
+.block-free-version-features
+{
+    font-size: 14px;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.block-premium-version-features
+{
+    width: 50%;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.festi-message
+{
+    margin: 0;
+    width: 87%;
+}
